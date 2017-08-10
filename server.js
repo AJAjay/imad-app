@@ -4,11 +4,42 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
+var aj_one={
+    title:"AJ's app",
+    content:`
+            <h1>hello this is new window</h1>
+            <p>this para is just for understanding of the context of the program</p>
+            `
+    
+};
+function createtemplate(date){
+    title = data.title;
+    content = data.content;
+    var htmltemplate=`
+        <html>
+            <head>
+                <title>
+                    ${title}
+                </title>
+                <link href="/ui/style.css" rel="stylesheet"/>
+                <meta name='viewport' content="width=device-width,initial-scale=1"/>
+            </head>
+            <body>
+                <div class="container">
+                    <a href='/'>HOME</a>
+                    <hr>
+                    ${content}
+                </div>
+            </body>
+        </html>
+        `;
+    return htmltemplate;
+}        
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui', 'index.html'));
 });
 app.get('/aj-one',function(req,res){
-   res.sendFile(path.join(__dirname,'ui','aj-one.html'));
+   res.send(createtemplate(aj_one));
 });
 
 app.get('/ui/style.css', function (req, res) {
