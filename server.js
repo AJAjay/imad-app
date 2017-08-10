@@ -12,7 +12,7 @@ var aj_one={
             `
     
 };
-function createtemplate(date){
+function createtemplate(data){
     var title = data.title;
     var content = data.content;
     var htmltemplate=`
