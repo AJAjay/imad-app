@@ -4,13 +4,21 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var aj_one={
-    title:"AJ's app",
-    content:`
+var articles={
+    aj_one:{
+        title:"AJ's app",
+        content:`
             <h1>hello this is new window</h1>
             <p>this para is just for understanding of the context of the program</p>
-            `
-    
+            '`,
+    },
+    aj_two:{
+        title:"AJ's second page",
+        content:`
+            <h1>hello this is second window</h1>
+            <p>this para is just for understanding of the context of the program</p>
+            '`,
+    }
 };
 function createtemplate(data){
     var title = data.title;
@@ -38,8 +46,9 @@ function createtemplate(data){
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname,'ui', 'index.html'));
 });
-app.get('/aj-one',function(req,res){
-   res.send(createtemplate(aj_one));
+app.get('/:articleName',function(req,res){
+    var articleName = req.para.articleName;
+    res.send(createtemplate(articles[articleName]));
 });
 
 app.get('/ui/style.css', function (req, res) {
