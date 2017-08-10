@@ -5,19 +5,19 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 var articles={
-    aj_one:{
+    'aj-one':{
         title:"AJ's app",
         content:`
             <h1>hello this is new window</h1>
             <p>this para is just for understanding of the context of the program</p>
             '`,
     },
-    aj_two:{
+    'aj-two':{
         title:"AJ's second page",
         content:`
             <h1>hello this is second window</h1>
             <p>this para is just for understanding of the context of the program</p>
-            '`,
+            '`
     }
 };
 function createtemplate(data){
