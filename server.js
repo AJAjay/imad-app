@@ -13,8 +13,8 @@ var aj_one={
     
 };
 function createtemplate(date){
-    title = data.title;
-    content = data.content;
+    var title = data.title;
+    var content = data.content;
     var htmltemplate=`
         <html>
             <head>
