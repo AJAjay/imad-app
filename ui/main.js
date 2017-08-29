@@ -15,3 +15,9 @@ function moveRight(){
 img.onclick = function(){
     var interval = setInterval(moveRight,50);
 };
+var drop = function(){
+  $('.dropdown-toggle').click(function(){
+     $('.dropdown-click').toggle(); 
+  });  
+}
+$(document).ready(drop);
