@@ -5,13 +5,16 @@ button.onclick = function(){
     //capture the request
     request.onreadystatechange = function(){
         if(request.readystate === XMLHttpRequest.DONE){ //XMLHttpRequest.DONE-->request is completed
-            if(request.status === 200){
+            if(request.status === 200){//check request is fully completed
                 var counter = request.responseText;
                 var span = document.getElementById('count');
                 span.innerHTML = counter.toString();
             }
         }
     };
+    //make the request
+    request.open('GET','https://ajajay271.imad.hasura-app.io/counter',true);
+    request.send(null);
 };
 /*var button = document.getElementById('counter');
 var counter =0;
