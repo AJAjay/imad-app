@@ -4,11 +4,12 @@ button.onclick = function(){
     var request = new XMLHttpRequest();
     //capture the request
     request.onreadystatechange = function(){
-        if(request.readystate === XMLHttpRequest.DONE){ //XMLHttpRequest.DONE-->request is completed
+        if(request.readystate === XMLHttpRequest.DONE){ 
+            //XMLHttpRequest.DONE-->request is completed
             if(request.status === 200){//check request is fully completed
-                var counter = request.responseText;
+                var count = request.responseText;
                 var span = document.getElementById('count');
-                span.innerHTML = counter.toString();
+                span.innerHTML = count.toString();
             }
         }
     };
