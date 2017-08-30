@@ -1,4 +1,4 @@
-console.log('Loaded!');
+/*console.log('Loaded!');
 
 //SOME java script
 
@@ -20,4 +20,4 @@ var drop = function(){
      $('.dropdown-click').toggle(); 
   });  
 }
-$(document).ready(drop);
+$(document).ready(drop);*/
