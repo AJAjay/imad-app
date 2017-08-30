@@ -13,7 +13,7 @@ button.onclick = function(){
         }
     };
     //make the request
-    request.open('GET','https://ajajay271.imad.hasura-app.io/counter',true);
+    request.open('GET','http://ajajay271.imad.hasura-app.io/counter',true);
     request.send(null);
 };
 /*var button = document.getElementById('counter');
