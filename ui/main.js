@@ -1,11 +1,26 @@
 var button = document.getElementById('counter');
+button.onclick = function(){
+    //create requenst
+    var request = new XMLHttpRequest();
+    //capture the request
+    request.onreadystatechange = function(){
+        if(request.readystate === XMLHttpRequest.DONE){ //XMLHttpRequest.DONE-->request is completed
+            if(request.status === 200){
+                var counter = request.responseText;
+                var span = document.getElementById('count');
+                span.innerHTML = counter.toString();
+            }
+        }
+    };
+};
+/*var button = document.getElementById('counter');
 var counter =0;
 button.onclick = function(){
     counter = counter+1;
     var span = document.getElementById('count');
     span.innerHTML = counter.toString();
 };
-/*console.log('Loaded!');
+console.log('Loaded!');
 
 //SOME java script
 
