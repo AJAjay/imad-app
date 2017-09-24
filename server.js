@@ -13,7 +13,7 @@ var config = {
 
 var app = express();
 app.use(morgan('combined'));
-var articles={
+/*var articles={
     'aj-one':{
         title:"AJ's app",
         content:`
@@ -28,7 +28,7 @@ var articles={
             <p>this para is just for understanding of the context of the program</p>
             '`
     }
-};
+};*/
 function createtemplate(data){
     var title = data.title;
     var content = data.content;
